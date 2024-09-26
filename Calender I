@@ -1,0 +1,31 @@
+Approach 1  Using Demorgans theorum
+using or in if statement
+
+class MyCalendar:
+
+    def __init__(self):
+        self.calender = []
+
+    def book(self, start: int, end: int) -> bool:
+        for s,e in self.calender:
+            if not(e <= start or end <= s):
+                return False
+        self.calender.append((start,end))
+        return True
+    
+######################################################################################################################################
+
+Approach 2  Using Demorgans theorum
+using  and in if statement
+
+class MyCalendar:
+
+    def __init__(self):
+        self.calender = []
+
+    def book(self, start: int, end: int) -> bool:
+        for s,e in self.calender:
+            if(e > start and end > s):
+                return False
+        self.calender.append((start,end))
+        return True
